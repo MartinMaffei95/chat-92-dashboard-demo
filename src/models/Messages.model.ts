@@ -6,6 +6,7 @@ export interface Message {
   date: number;
   type: string;
 }
+
 export interface EndpointMessage {
   id: number;
   body: string;

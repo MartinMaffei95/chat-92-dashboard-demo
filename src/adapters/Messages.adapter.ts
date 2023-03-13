@@ -1,4 +1,4 @@
-import { Message, EndpointMessage } from "../models/Messages.interface";
+import { Message, EndpointMessage } from '../models/Messages.model';
 
 export const crateAddaptedMessage = (msg: EndpointMessage) => {
   const addaptedMsg: Message = {

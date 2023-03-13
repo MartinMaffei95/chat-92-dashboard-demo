@@ -1,7 +1,4 @@
-import "./App.css";
-import Dashboard from "./pages/Dashboard/components/Dashboard/Dashboard";
-import AppRoutes from "./pages/RouterIndex";
-import { getMessages } from "./services/getMessages";
+import AppRoutes from './pages/RouterIndex';
 
 export const App = () => {
   return <AppRoutes />;

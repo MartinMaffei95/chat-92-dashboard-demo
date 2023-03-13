@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Dashboard from "./Dashboard/components/Dashboard/Dashboard";
-import Login from "./Login/components/Login";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import DashboardLayout from './Dashboard/DashboardLayout';
+import Login from './Login/components/Login';
 
 const AppRoutes = () => {
   const RequireAuth = ({ children }: { children: JSX.Element }) => {
@@ -23,7 +23,7 @@ const AppRoutes = () => {
           path="/"
           element={
             <RequireAuth>
-              <Dashboard />
+              <DashboardLayout />
             </RequireAuth>
           }
         />

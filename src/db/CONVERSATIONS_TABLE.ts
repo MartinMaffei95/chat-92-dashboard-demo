@@ -1,20 +1,20 @@
-import { Conversation } from "../models/Conversation.interface";
+import { Conversation } from '../models/Conversation.model';
 
 export const CONVERSATIONS_TABLE: Conversation[] = [
   {
-    id: "1",
+    id: '1',
     init_by_user: true,
     expired: true,
     messages: [],
   },
   {
-    id: "2",
+    id: '2',
     init_by_user: true,
     expired: false,
     messages: [],
   },
   {
-    id: "3",
+    id: '3',
     init_by_user: false,
     expired: true,
     messages: [],

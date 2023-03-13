@@ -1,1 +1,2 @@
-export * from "./Messages.interface";
+export * from './Conversation.model';
+export * from './Messages.model';
