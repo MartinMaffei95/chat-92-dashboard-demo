@@ -12,6 +12,14 @@ const Dashboard = () => {
     useState<Conversation[]>(CONVERSATIONS_TABLE);
 
   const [actives, setActives] = useState<number>(0);
+  type startedForType = {
+    started_for_user: number;
+    started_for_us: number;
+  };
+  const [startedFor, setStartedFor] = useState<startedForType>({
+    started_for_user: 0,
+    started_for_us: 0,
+  });
 
   const expiredConversations = (conversations: Conversation[]) => {
     let actives = 0;
@@ -20,9 +28,19 @@ const Dashboard = () => {
     }
     return actives;
   };
+  const startedBy = (conversations: Conversation[]) => {
+    let user = 0;
+    let us = 0;
+    for (const c of conversations) {
+      c.init_by_user === true ? user++ : us++;
+    }
+    return { started_for_user: user, started_for_us: us };
+  };
+
   useEffect(() => {
-    getMessages().then((res) => setMessages(res));
+    // getMessages().then((res) => setMessages(res));
     setActives(expiredConversations(conversations));
+    setStartedFor(startedBy(conversations));
   }, []);
 
   return (
@@ -33,9 +51,9 @@ const Dashboard = () => {
           <DataModule label="Activas" quantity={actives} />
         </DataModuleContainer>
 
-        <DataModuleContainer sectionName="Conversaciones">
-          <DataModule label="Total" quantity={conversations.length} />
-          <DataModule label="Activas" quantity={actives} />
+        <DataModuleContainer sectionName="Iniciada por">
+          <DataModule label="Usuarios" quantity={startedFor.started_for_user} />
+          <DataModule label="Empresa" quantity={startedFor.started_for_us} />
         </DataModuleContainer>
         <DataModuleContainer sectionName="Mensajes">
           <DataModule label="Total" quantity={messages?.length || 0} />

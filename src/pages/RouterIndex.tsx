@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import DashboardLayout from './Dashboard/DashboardLayout';
-import Login from './Login/components/Login';
+import LoginLayout from './Login/LoginLayout';
 
 const AppRoutes = () => {
   const RequireAuth = ({ children }: { children: JSX.Element }) => {
@@ -33,7 +33,7 @@ const AppRoutes = () => {
           path="/login"
           element={
             <>
-              <Login />
+              <LoginLayout />
             </>
           }
         ></Route>

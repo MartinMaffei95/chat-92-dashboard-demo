@@ -13,8 +13,9 @@ const DataModuleContainer = ({
   children,
 }: DataModuleContainerTypes) => {
   return (
-    <div className={`p-4 rounded ${sxContainer}`}>
-      <h3 className={`text-2xl ${sxName}`}>{sectionName}</h3>
+    <div className={`p-4 rounded flex flex-col gap-2 ${sxContainer}`}>
+      <h3 className={`text-2xl border-b-2 ${sxName}`}>{sectionName}</h3>
+
       <div className="flex gap-2">{children}</div>
     </div>
   );

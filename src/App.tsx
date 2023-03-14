@@ -1,7 +1,12 @@
 import AppRoutes from './pages/RouterIndex';
+import StateProvider from './redux/Provider';
 
 export const App = () => {
-  return <AppRoutes />;
+  return (
+    <StateProvider>
+      <AppRoutes />
+    </StateProvider>
+  );
 };
 
 export default App;

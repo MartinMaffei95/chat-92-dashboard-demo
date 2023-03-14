@@ -55,7 +55,7 @@ export const MESSAGE_TABLE: Message[] = [
   {
     id: 100,
     source: 'whatsapp',
-    body: 'A cuanto el pt?',
+    body: 'Hola compañero',
     type: 'TEXT',
     date: 1678633765,
   },
